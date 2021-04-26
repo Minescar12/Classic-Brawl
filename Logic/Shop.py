@@ -27,25 +27,39 @@ class Shop:
     offers = [
 
         {
-            'ID': 6,
-            'OfferTitle': 'SPECIAL OFFER',
-            'Cost': 20,
+            'ID': 4,
+            'OfferTitle': 'Yo FREE shelly skins??!!?1?1?',
+            'Cost': 2,
             'Multiplier': 1,
-            'SkinID': 0,
+            'BrawlerID': 0,
+            'SkinID': 52,
             'ShopType': 0,
             'ShopDisplay': 0,
-            'Timer': 99999
+            'Timer': 69420
         },
-
+        
         {
             'ID': 10,
-            'OfferTitle': 'SPECIAL OFFER',
-            'Cost': 1500,
+            'OfferTitle': 'Coins',
+            'Cost': 20,
             'Multiplier': 1,
+            'BrawlerID': 0,
             'SkinID': 0,
-            'ShopType': 3,
-            'ShopDisplay': 0,
-            'Timer': 99999
+            'ShopType': 0,
+            'ShopDisplay': 1,
+            'Timer': 69420
+        },
+        
+        {
+            'ID': 8,
+            'OfferTitle': 'Coins',
+            'Cost': 10,
+            'Multiplier': 5,
+            'BrawlerID': 0,
+            'SkinID': 0,
+            'ShopType': 1,
+            'ShopDisplay': 1,
+            'Timer': 69420
         },
 
 
@@ -66,12 +80,7 @@ class Shop:
         {
             'Cost': 140,
             'Amount': 1200
-        },
-
-        {
-            'Cost': 280,
-            'Amount': 2600
-        },
+        }
 
     ]
 
@@ -98,3 +107,32 @@ class Shop:
     }
 
 
+    def EncodeShopOffers(self):
+        count = len(Shop.offers)
+        self.writeVint(count)
+        for i in range(count):
+            item = Shop.offers[i]
+
+            self.writeVint(1)
+
+            self.writeVint(item['ID']) # ItemID
+            self.writeVint(item['Multiplier']) # Ammount
+            self.writeScId(16, item['BrawlerID'])
+            self.writeVint(item['SkinID'])
+            self.writeVint(item['ShopType'])  # [0 = Offer, 2 = Skins 3 = Star Shop]
+
+            self.writeVint(item['Cost'])  # Cost
+            self.writeVint(item['Timer']) # Timer
+
+            self.writeVint(1)
+            self.writeVint(100)
+            self.writeVint(0)  # is Offer Purchased
+
+            self.writeBoolean(False)
+            self.writeVint(item['ShopDisplay'])  # [0 = Normal, 1 = Daily Deals]
+            self.writeBoolean(False)
+            
+            self.writeInt(0)
+            self.writeString(item['OfferTitle'])
+            self.writeBoolean(False)
+            
