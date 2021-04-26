@@ -12,14 +12,16 @@ from Packets.Messages.Client.Battle.AskForBattleEndMessage import AskForBattleEn
 from Packets.Messages.Client.SetNameMessage import SetNameMessage
 from Packets.Messages.Client.Home.GetLeaderboardMessage import GetLeaderboardMessage
 from Packets.Messages.Client.Home.AvatarNameCheckRequestMessage import AvatarNameCheckRequestMessage
-from Packets.Messages.Client.Gameroom.TeamUseGadgetMessage import TeamUseGadgetMessage
 from Packets.Messages.Client.Gameroom.Do_Not_Distrub_Message import DoNotDistrubMessage
 from Packets.Messages.Client.Gameroom.TeamSetRankedLocationMessage import TeamSetRankedLocationMessage
+from Packets.Messages.Client.Gameroom.TeamMemberStatusMessage import TeamMemberStatusMessage
 from Packets.Messages.Client.Home.PlayerStatusMessage import PlayerStatusMessage
 from Packets.Messages.Client.ClientCapabilities import ClientCapabilities
 from Packets.LogicCommandManager import EndClientTurn
-from Packets.Messages.Client.Battle.Cancel_Matchmaking import CancelMatchMaking
 from Packets.Messages.Client.Battle.OnPlay import OnPlay
+from Packets.Messages.Client.Battle.CancelMatchmaking import CancelMatchMaking
+from Packets.Messages.Client.Battle.PlayAgainMessage import PlayAgainMessage
+from Packets.Messages.Client.Battle.HomeBattleReplayMessage import HomeBattleReplayMessage
 
 # Alliances
 from Packets.Messages.Client.Alliance.Create_Message import Create_Message
@@ -59,6 +61,8 @@ packets = {
     14109: GoHomeFromOfflinePractiseMessage,
     14110: AskForBattleEndMessage,
     14113: AskProfileMessage,
+    14114: HomeBattleReplayMessage,
+    14177: PlayAgainMessage,
     14201: FacebookConnect,
     14211: UnlinkFacebookAcount,
 
@@ -83,12 +87,12 @@ packets = {
     # Friendly battle lobby
     14350: TeamCreateMessage,
     14353: TeamLeaveMessage,
+    14361: TeamMemberStatusMessage,
     14363: TeamSetLocationMessage,
     14354: TeamChangeMemberSettingsMessage,
     14362: TeamSetRankedLocationMessage,
     14363: TeamSetLocationMessage,
     14366: PlayerStatusMessage,
-    14372: TeamUseGadgetMessage,
 
     14403: GetLeaderboardMessage,
     14600: AvatarNameCheckRequestMessage,
