@@ -6,6 +6,7 @@
     "BrawlBoxTokens": 2500,
     "BigBoxTokens": 100,
     "ExperiencePoints": 0,
+	"MaximumExperience": 145630,
     "Trophies": 0,
     "ShowPacketsInLog": false,
     "ThemeID": 0,

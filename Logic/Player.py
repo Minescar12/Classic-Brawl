@@ -111,6 +111,7 @@ class Players:
 	content_creator = settings['SupportedContentCreator']
 	tokenevent = settings['DoubleTokenEvent']
 	coinevent = settings['CoinShowerEvent']
+	maximum_experience = settings['MaximumExperience']
 
 	# Alliances
 	club_high_id = 0
