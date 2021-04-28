@@ -28,7 +28,7 @@ class Shop:
 
         {
             'ID': 4,
-            'OfferTitle': 'Yo FREE shelly skins??!!?1?1?',
+            'OfferTitle': 'Special Offer',
             'Cost': 2,
             'Multiplier': 1,
             'BrawlerID': 0,
@@ -40,7 +40,7 @@ class Shop:
         
         {
             'ID': 10,
-            'OfferTitle': 'Coins',
+            'OfferTitle': 'Power Points',
             'Cost': 20,
             'Multiplier': 1,
             'BrawlerID': 0,
@@ -60,6 +60,30 @@ class Shop:
             'ShopType': 1,
             'ShopDisplay': 1,
             'Timer': 69420
+        },
+        
+        {
+            'ID': 6,
+            'OfferTitle': 'SPECIAL OFFER',
+            'Cost': 20,
+            'Multiplier': 1,
+            'BrawlerID': 0,
+            'SkinID': 0,
+            'ShopType': 0,
+            'ShopDisplay': 0,
+            'Timer': 99999
+        },
+
+        {
+            'ID': 10,
+            'OfferTitle': 'SPECIAL OFFER',
+            'Cost': 1500,
+            'Multiplier': 1,
+            'BrawlerID': 0,
+            'SkinID': 0,
+            'ShopType': 3,
+            'ShopDisplay': 0,
+            'Timer': 99999
         },
 
 
@@ -126,13 +150,17 @@ class Shop:
 
             self.writeVint(1)
             self.writeVint(100)
-            self.writeVint(0)  # is Offer Purchased
+            self.writeBoolean(False)  # is Offer Purchased
 
             self.writeBoolean(False)
             self.writeVint(item['ShopDisplay'])  # [0 = Normal, 1 = Daily Deals]
             self.writeBoolean(False)
+            self.writeVint(0)
             
             self.writeInt(0)
-            self.writeString(item['OfferTitle'])
+            self.write_string_reference(item['OfferTitle'])
+            self.writeBoolean(False)
+            self.writeString()
+            self.writeVint(0)
             self.writeBoolean(False)
             

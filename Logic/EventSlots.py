@@ -22,7 +22,7 @@ class EventSlots:
         },
 
         {
-            'ID': 0,
+            'ID': 17,
             'Status': 2,
             'Ended': False,
             'Modifier': 0,
@@ -30,7 +30,7 @@ class EventSlots:
         },
 
         {
-            'ID': 25,
+            'ID': 0,
             'Status': 2,
             'Ended': False,
             'Modifier': 0,
@@ -46,11 +46,27 @@ class EventSlots:
         },
 
         {
+            'ID': 24,
+            'Status': 2,
+            'Ended': False,
+            'Modifier': 0,
+            'Tokens': 10
+        },
+
+        {
             'ID': 21,
             'Status': 2,
             'Ended': False,
             'Modifier': 0,
             'Tokens': 2
+        },
+
+        {
+            'ID': 97,
+            'Status': 2,
+            'Ended': False,
+            'Modifier': 0,
+            'Tokens': 10
         }
 
     ]
