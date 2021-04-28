@@ -72,6 +72,10 @@ class EndClientTurn(BSMessageReader):
             LogicSetPlayerNameColorCommand.decode(self)
             LogicSetPlayerNameColorCommand.process(self)
 
+        elif self.commandID == 529:
+            LogicSetPlayerStarpowerCommand.decode(self)
+            LogicSetPlayerStarpowerCommand.process(self)
+
 
         elif self.commandID >= 0:
             print(self.commandID, "Is not handled!")

@@ -12,6 +12,7 @@ from Packets.Messages.Client.Battle.AskForBattleEndMessage import AskForBattleEn
 from Packets.Messages.Client.SetNameMessage import SetNameMessage
 from Packets.Messages.Client.Home.GetLeaderboardMessage import GetLeaderboardMessage
 from Packets.Messages.Client.Home.AvatarNameCheckRequestMessage import AvatarNameCheckRequestMessage
+from Packets.Messages.Client.Gameroom.TeamUseGadgetMessage import TeamUseGadgetMessage
 from Packets.Messages.Client.Gameroom.Do_Not_Distrub_Message import DoNotDistrubMessage
 from Packets.Messages.Client.Gameroom.TeamSetRankedLocationMessage import TeamSetRankedLocationMessage
 from Packets.Messages.Client.Gameroom.TeamMemberStatusMessage import TeamMemberStatusMessage
@@ -93,6 +94,7 @@ packets = {
     14362: TeamSetRankedLocationMessage,
     14363: TeamSetLocationMessage,
     14366: PlayerStatusMessage,
+    14372: TeamUseGadgetMessage,
 
     14403: GetLeaderboardMessage,
     14600: AvatarNameCheckRequestMessage,
